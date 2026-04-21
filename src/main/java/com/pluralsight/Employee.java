@@ -9,7 +9,7 @@ public class Employee {
     public Employee() {
 
     }
-
+    //region getters/setters
     public int getId() {
         return id;
     }
@@ -41,14 +41,11 @@ public class Employee {
     public void setPayRate(double payRate) {
         this.payRate = payRate;
     }
-/**
-    public Employee(int id, String name, double hoursWorked, double payRate) {
-        this.id = id;
-        this.name = name;
-        this.hoursWorked = hoursWorked;
-        this.payRate = payRate;
-    } **/
+    //endregion
 
+    public double calculateGrossPay () {
+        return hoursWorked * payRate;
+    }
 
 
 }

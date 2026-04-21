@@ -30,7 +30,7 @@ public class Main {
                 employee.setHoursWorked(hoursWorked);
                 employee.setPayRate(payRate);
 
-                System.out.println(employee.getName());
+                System.out.println(employee.getName() + " " + employee.calculateGrossPay());
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
