@@ -8,16 +8,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name of the file employee file to process: ");
-        String selectedFile = scanner.nextLine();
+        String inputFile = "src/main/resources/" + scanner.nextLine();
 
         System.out.println("Enter the name of the payroll file to create: ");
-        String payrollFile = scanner.nextLine();
+        String outFile = "src/main/resources/" + scanner.nextLine();
 
 
         try {
-            BufferedReader bufReader = new BufferedReader(new FileReader("src/main/resources/employeesnew.csv"));
+            BufferedReader bufReader = new BufferedReader(new FileReader(inputFile));
             bufReader.readLine();// skips header
-            FileWriter writer = new FileWriter(payrollFile);
+            FileWriter writer = new FileWriter(outFile);
             writer.write("id|name|hours-worked|pay-rate\n");
 
             String line;
@@ -27,8 +27,8 @@ public class Main {
 
                 int id = Integer.parseInt(parts [0]);
                 String name = parts [1];
-                double hoursWorked = Double.parseDouble(parts [2]);
-                double payRate = Double.parseDouble(parts [3]);
+                double hoursWorked = Double.parseDouble(parts[2]);
+                double payRate = Double.parseDouble(parts[3]);
 
 
                 Employee employee = new Employee();
